@@ -1,32 +1,50 @@
-# macOS
+# ===== macOS =====
 .DS_Store
 .AppleDouble
 .LSOverride
 ._*
 
-# 编辑器 / IDE
-.vscode/
+# ===== 编辑器 / IDE =====
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea/
 *.swp
 *.swo
 *~
+.project
+.classpath
 
-# 依赖
+# ===== Node.js =====
 node_modules/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-env/
-.egg-info/
+.npm/
+.pnpm-store/
+*.tsbuildinfo
 dist/
 build/
-target/
+coverage/
+.nyc_output/
+# 注意：锁文件（package-lock.json / pnpm-lock.yaml / yarn.lock）必须提交，
+# 否则依赖版本无法复现，不在此忽略。
 
-# 密钥与本地环境变量（务必不要提交）
+# ===== Python（预留）=====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ===== Go / Rust / Java（预留）=====
+target/
+*.class
+*.jar
+.gradle/
+
+# ===== 密钥与本地配置（务必不要提交）=====
 .env
 .env.*
 !.env.example
@@ -35,12 +53,14 @@ target/
 *.p12
 *.keystore
 secrets.json
+credentials.json
 
-# 日志与临时文件
+# ===== 日志与临时文件 =====
 *.log
 logs/
 tmp/
+temp/
 .cache/
 
-# WorkBuddy 本地会话数据（记忆、会话记录等，不参与版本管理）
+# ===== WorkBuddy 本地会话数据 =====
 .workbuddy/
